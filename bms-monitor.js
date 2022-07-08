@@ -1,4 +1,4 @@
-
+import {Test} from './bms-Test.js';
 const {expect} = require('chai');
 
 function batteryIsOk(temperature, soc, charge_rate) {
