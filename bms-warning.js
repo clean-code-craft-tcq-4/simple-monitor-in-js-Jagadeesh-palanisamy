@@ -1,3 +1,4 @@
+import {limitStatus_en,limitStatus_gm} from './bms-enum.js'
 const checkWarningLevel = (lowerLimit,upperLimit,value) =>{
 	  const WarningLimit =calculateWarningLimit(upperLimit) ;
 	  
