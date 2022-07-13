@@ -19,7 +19,7 @@ const isChargeRateOK = (chargeRate) =>{
 }
 
  checkBattery = (toCheck,lowerLimit,upperLimit,statement) => {
-		if (lowerLimit < toCheck <  upperLimit) {
+		if (toCheck >= upperLimit || toCheck <= lowerLimit ) {
 		printStatement(statement);
 	  return false;
 		}
