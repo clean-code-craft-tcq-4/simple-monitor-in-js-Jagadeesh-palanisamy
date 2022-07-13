@@ -1,7 +1,6 @@
 const {expect} = require('chai');
 import {checkWarningLevel,printStatement} from './bms-warning.js'
 let language = '';
-
 const batteryIsOk = (temperature, soc, chargeRate ,lang)=> {
 language = lang;
 const tempResult = isTemperatureOK(temperature);
@@ -9,20 +8,16 @@ const socResult =  isSocOK(soc);
 const chargeResult = isChargeRateOK(chargeRate);
  return tempResult&&socResult&&chargeResult
 }
-
 const isTemperatureOK = (temperature) =>{
   return checkBattery(temperature, 0, 45, "Temperature")
 }
-
 const isSocOK = (soc) =>{
   return checkBattery(soc, 20, 80, "State of Charge")
   
 }
-
 const isChargeRateOK = (chargeRate) =>{
   return checkBattery(chargeRate, 0, 0.8, "Charge Rate")
 }
-
  const checkBattery = (toCheck,lowerLimit,upperLimit,statement) => {
         checkWarningLevel(lowerLimit,upperLimit,toCheck);
     if (toCheck >= upperLimit || toCheck <= lowerLimit ) {
@@ -31,9 +26,3 @@ const isChargeRateOK = (chargeRate) =>{
 		}
 		return true;
 	}
-	
-	
-	  
-
-	
-
