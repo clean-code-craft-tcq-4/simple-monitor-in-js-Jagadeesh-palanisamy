@@ -33,24 +33,7 @@ const isChargeRateOK = (chargeRate) =>{
 	
 	
 	  
-	  const calculateWarningLimit = (upperLimit) =>{
-	    return Number((upperLimit * 0.05).toFixed(2))  ;
-	  }
-	
-   const setWarningStatement=(limit)=>{
-       if(language==='english'){
-		     printStatement(limitStatus_en[limit])
-		  }
-		  if(language==='german'){
-		     printStatement(limitStatus_gm[limit])
-		  }
-    }
-	
-	
-	
-		const printStatement = (statement) =>{
-	  console.log(statement)
-	}
+
 	
 // batteryIsOk(25, 80, 0.7)
 batteryIsOk(50, 50, 0,'german')
