@@ -1,4 +1,4 @@
-import {checkWarningLevel,printStatement} from './bms-warning.js'
+import {checkWarningLevel} from './bms-warning.js'
 import {Test} from './bms-test.js'
 let language = '';
 export const batteryIsOk = (temperature, soc, chargeRate ,lang)=> {
@@ -25,5 +25,17 @@ const isChargeRateOK = (chargeRate) =>{
     return false;
 		}
 		return true;
+	}
+ 
+  export const setWarningStatement=(limit)=>{
+       if(language==='english'){
+		     printStatement(limitStatus_en[limit])
+		  }
+		  if(language==='german'){
+		     printStatement(limitStatus_gm[limit])
+		  }
+    }
+	export const printStatement = (statement) =>{
+	  console.log(statement)
 	}
  Test();
