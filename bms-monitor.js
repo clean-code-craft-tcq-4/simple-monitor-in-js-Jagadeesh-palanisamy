@@ -36,5 +36,4 @@ const isChargeRateOK = (chargeRate) =>{
 	  
 
 	
-// batteryIsOk(25, 80, 0.7)
-batteryIsOk(50, 50, 0,'german')
+
