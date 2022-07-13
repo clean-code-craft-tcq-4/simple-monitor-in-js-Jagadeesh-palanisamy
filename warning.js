@@ -19,3 +19,22 @@ const checkWarningLevel = (lowerLimit,upperLimit,value) =>{
 	  
 	  
 	}
+
+	  const calculateWarningLimit = (upperLimit) =>{
+	    return Number((upperLimit * 0.05).toFixed(2))  ;
+	  }
+	
+   const setWarningStatement=(limit)=>{
+       if(language==='english'){
+		     printStatement(limitStatus_en[limit])
+		  }
+		  if(language==='german'){
+		     printStatement(limitStatus_gm[limit])
+		  }
+    }
+	
+	
+	
+		const printStatement = (statement) =>{
+	  console.log(statement)
+	}
