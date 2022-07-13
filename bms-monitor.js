@@ -1,4 +1,4 @@
-import {checkWarningLevel} from '../bms-warning.js'
+import {checkWarningLevel} from './bms-warning.js'
 const limitStatus_en = {
   lowbreach: 'LOW_BREACH',
   lowwarning: 'LOW_WARNING',
