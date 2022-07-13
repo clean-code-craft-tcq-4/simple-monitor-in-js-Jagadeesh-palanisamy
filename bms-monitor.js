@@ -1,4 +1,5 @@
 const {expect} = require('chai');
+import {checkWarningLevel,printStatement} from './bms-warning.js'
 let language = '';
 
 const batteryIsOk = (temperature, soc, chargeRate ,lang)=> {
