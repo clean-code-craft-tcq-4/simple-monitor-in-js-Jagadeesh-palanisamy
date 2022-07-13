@@ -1,5 +1,5 @@
 import {limitStatus_en,limitStatus_gm} from './bms-enum.js'
-const checkWarningLevel = (lowerLimit,upperLimit,value) =>{
+export const checkWarningLevel = (lowerLimit,upperLimit,value) =>{
 	  const WarningLimit =calculateWarningLimit(upperLimit) ;
 	   if((lowerLimit>value)){
 	     setWarningStatement('lowbreach')
@@ -28,7 +28,7 @@ const checkWarningLevel = (lowerLimit,upperLimit,value) =>{
 		     printStatement(limitStatus_gm[limit])
 		  }
     }
-	const printStatement = (statement) =>{
+	export const printStatement = (statement) =>{
 	  console.log(statement)
 	}
 
