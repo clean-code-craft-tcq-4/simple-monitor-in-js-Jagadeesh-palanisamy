@@ -37,7 +37,7 @@ const isChargeRateOK = (chargeRate) =>{
   return checkBattery(chargeRate, 0, 0.8, "Charge Rate")
 }
 
- checkBattery = (toCheck,lowerLimit,upperLimit,statement) => {
+ const checkBattery = (toCheck,lowerLimit,upperLimit,statement) => {
  checkWarningLevel(lowerLimit,upperLimit,toCheck);
     if (toCheck >= upperLimit || toCheck <= lowerLimit ) {
 	   	printStatement(statement +" is out of range!");
