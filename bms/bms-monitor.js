@@ -27,3 +27,4 @@ const isChargeRateOK = (chargeRate) =>{
 		}
 		return true;
 	}
+ Test();
