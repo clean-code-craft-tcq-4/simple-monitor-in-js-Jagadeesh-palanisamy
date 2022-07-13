@@ -2,7 +2,7 @@ import {checkWarningLevel,printStatement} from './bms-warning.js'
 import {Test} from './bms-test.js'
 const {expect} = require('chai');
 let language = '';
-const batteryIsOk = (temperature, soc, chargeRate ,lang)=> {
+export const batteryIsOk = (temperature, soc, chargeRate ,lang)=> {
 language = lang;
 const tempResult = isTemperatureOK(temperature);
 const socResult =  isSocOK(soc); 
