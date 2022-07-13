@@ -1,4 +1,3 @@
-import {checkWarningLevel} from 'bms-warning.js'
 const limitStatus_en = {
   lowbreach: 'LOW_BREACH',
   lowwarning: 'LOW_WARNING',
@@ -46,28 +45,28 @@ const checkBattery = (toCheck, lowerLimit, upperLimit, statement) => {
   return true;
 };
 
-// const checkWarningLevel = (lowerLimit, upperLimit, value) => {
-//   const WarningLimit = calculateWarningLimit(upperLimit);
+const checkWarningLevel = (lowerLimit, upperLimit, value) => {
+  const WarningLimit = calculateWarningLimit(upperLimit);
 
-//   if (lowerLimit > value) {
-//     setWarningStatement('lowbreach');
-//   }
-//   if (lowerLimit <= value && lowerLimit + WarningLimit >= value) {
-//     setWarningStatement('lowwarning');
-//   }
-//   if (
-//     lowerLimit + WarningLimit <= value &&
-//     upperLimit - WarningLimit >= value
-//   ) {
-//     setWarningStatement('normal');
-//   }
-//   if (upperLimit - WarningLimit <= value && value >= upperLimit) {
-//     setWarningStatement('highwarning');
-//   }
-//   if (upperLimit > value) {
-//     setWarningStatement('highbreach');
-//   }
-// };
+  if (lowerLimit > value) {
+    setWarningStatement('lowbreach');
+  }
+  if (lowerLimit <= value && lowerLimit + WarningLimit >= value) {
+    setWarningStatement('lowwarning');
+  }
+  if (
+    lowerLimit + WarningLimit <= value &&
+    upperLimit - WarningLimit >= value
+  ) {
+    setWarningStatement('normal');
+  }
+  if (upperLimit - WarningLimit <= value && value >= upperLimit) {
+    setWarningStatement('highwarning');
+  }
+  if (upperLimit > value) {
+    setWarningStatement('highbreach');
+  }
+};
 
 const calculateWarningLimit = (upperLimit) => {
   return Number((upperLimit * 0.05).toFixed(2));
@@ -85,3 +84,6 @@ const setWarningStatement = (limit) => {
 const printStatement = (statement) => {
   console.log(statement);
 };
+
+expect(batteryIsOk(25, 70, 0.7,'english')).to.be.true;
+expect(batteryIsOk(50, 85, 0,'german')).to.be.false;
